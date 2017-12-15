@@ -1,0 +1,10 @@
+<label for="" class="lbl">Time Range</label>
+<div  class="input-group">
+  <input type = "text" #timerange (keyup)="onKey($event)" (click)="onClick($event)">
+  <button *ngIf="predefinedRanges" (click) = "toggleSelector()">...</button>
+  <div *ngIf="expanded"> 
+    <div *ngFor = "let range of predefinedRanges" (click)="predefinedRangeClick(range.value)">
+      <a href="#">{{range.name}}</a>
+    </div> 
+  </div>
+</div> 
